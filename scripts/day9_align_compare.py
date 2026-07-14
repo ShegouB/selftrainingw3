@@ -16,16 +16,16 @@ os.makedirs(OUT_DIR, exist_ok=True)
 def check_input():
     """Verify input file exists and has sequences before running aligners."""
     if not os.path.exists(INPUT):
-        print(f"❌ Input file not found: {INPUT}")
-        print("   Run day9_fetch_kelch13_strains.py first.")
+        print(f"Input file not found: {INPUT}")
+        print("Run day9_fetch_kelch13_strains.py first.")
         return False
     with open(INPUT) as f:
         content = f.read()
     n_seqs = content.count(">")
     if n_seqs < 2:
-        print(f"❌ Only {n_seqs} sequence(s) found — need at least 2 to align.")
+        print(f" Only {n_seqs} sequence(s) found — need at least 2 to align.")
         return False
-    print(f"✅ Input verified: {n_seqs} sequences in {INPUT}")
+    print(f"Input verified: {n_seqs} sequences in {INPUT}")
     return True
 
 
@@ -36,9 +36,9 @@ def run_muscle(input_fasta, output_afa):
     result = subprocess.run(cmd, capture_output=True, text=True)
     elapsed = time.time() - start
     if result.returncode == 0 and os.path.exists(output_afa):
-        print(f"  MUSCLE   : ✅ {elapsed:.2f}s → {output_afa}")
+        print(f"  MUSCLE   : {elapsed:.2f}s → {output_afa}")
         return True
-    print(f"  MUSCLE   : ❌ {result.stderr[:300]}")
+    print(f"  MUSCLE   : {result.stderr[:300]}")
     return False
 
 
@@ -51,9 +51,9 @@ def run_mafft(input_fasta, output_afa):
     if result.returncode == 0 and result.stdout.strip():
         with open(output_afa, "w") as f:
             f.write(result.stdout)
-        print(f"  MAFFT    : ✅ {elapsed:.2f}s → {output_afa}")
+        print(f"  MAFFT    : {elapsed:.2f}s → {output_afa}")
         return True
-    print(f"  MAFFT    : ❌ {result.stderr[:300]}")
+    print(f"  MAFFT    : {result.stderr[:300]}")
     return False
 
 
@@ -65,9 +65,9 @@ def run_clustalw(input_fasta, output_aln):
     result = subprocess.run(cmd, capture_output=True, text=True)
     elapsed = time.time() - start
     if result.returncode == 0 and os.path.exists(output_aln):
-        print(f"  ClustalW : ✅ {elapsed:.2f}s → {output_aln}")
+        print(f"  ClustalW : {elapsed:.2f}s → {output_aln}")
         return True
-    print(f"  ClustalW : ❌ {result.stderr[:300]}")
+    print(f"  ClustalW : {result.stderr[:300]}")
     return False
 
 
@@ -115,8 +115,7 @@ def analyse_alignment(filepath, name, fmt="fasta"):
 
 
 def main():
-    print("\n🧬 Day 9 — Multiple Sequence Alignment Comparison")
-    print("=" * 65)
+    print("\n Day 9 — Multiple Sequence Alignment Comparison")
 
     if not check_input():
         return
@@ -138,10 +137,8 @@ def main():
     ]:
         analyse_alignment(path, name)
 
-    print("\n✅ Alignment comparison complete!")
+    print("\n Alignment comparison complete!")
     print(f"   Output files in: {OUT_DIR}/")
-    print("=" * 65)
-
 
 if __name__ == "__main__":
     main()

@@ -55,8 +55,7 @@ def search_and_fetch(query, expected_min=600, expected_max=800):
 
 
 def main():
-    print("\n🔧 Fixing kelch13 orthologs — search-verified accessions")
-    print("=" * 65)
+    print("\n Fixing kelch13 orthologs — search-verified accessions")
 
     verified_sequences = []
 
@@ -65,10 +64,10 @@ def main():
         header, seq, length = search_and_fetch(sp["query"])
 
         if seq is None:
-            print(f"  ❌ No results found")
+            print(f"No results found")
             continue
 
-        status = "✅" if 600 <= length <= 800 else "⚠"
+        status = "OK" if 600 <= length <= 800 else "WARMING"
         print(f"  {status} {header[:70]}")
         print(f"  Length: {length} aa")
 
@@ -80,9 +79,8 @@ def main():
         })
         time.sleep(0.4)
 
-    print(f"\n\n=== Summary ===")
     for v in verified_sequences:
-        flag = "✅" if 600 <= v["length"] <= 800 else "⚠ CHECK"
+        flag = "OKAY" if 600 <= v["length"] <= 800 else "CHECK"
         print(f"  {v['species']:<18} {v['length']:>5} aa  {flag}")
 
     # Save only the verified ones (within expected biological range)

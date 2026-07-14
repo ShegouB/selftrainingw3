@@ -41,7 +41,7 @@ def build_mutant(reference_seq, mutation):
     pos = mutation["pos"] - 1  # 0-indexed
     actual_wt = reference_seq[pos]
 
-    match = "✅" if actual_wt == mutation["wt"] else "⚠"
+    match = "OK" if actual_wt == mutation["wt"] else "WARMINGS"
     print(f"  {mutation['name']:<8} pos {mutation['pos']:>4}  "
           f"expected {mutation['wt']}, found {actual_wt}  {match}")
 
@@ -51,17 +51,15 @@ def build_mutant(reference_seq, mutation):
 
 def main():
     os.makedirs("data", exist_ok=True)
-    print("\n🧬 Day 9 v3 — Verified kelch13 Dataset: Reference + 9 WHO Mutants")
-    print("=" * 68)
+    print("\n Day 9 v3 — Verified kelch13 Dataset: Reference + 9 WHO Mutants")
 
     print(f"\nFetching reference: {REFERENCE_ACCESSION}")
     reference_seq = fetch_reference()
-    print(f"  ✅ Reference length: {len(reference_seq)} aa")
+    print(f"Reference length: {len(reference_seq)} aa")
 
     all_fasta = [f">Pf_kelch13_REFERENCE_3D7\n{reference_seq}"]
 
     print(f"\nBuilding {len(VALIDATED_MUTATIONS)} WHO-validated resistance mutants:")
-    print("-" * 68)
 
     for mut in VALIDATED_MUTATIONS:
         mutant_seq = build_mutant(reference_seq, mut)
@@ -72,11 +70,10 @@ def main():
     with open(output_path, "w") as f:
         f.write("\n".join(all_fasta) + "\n")
 
-    print(f"\n✅ Dataset built: {len(all_fasta)} sequences "
+    print(f"\n Dataset built: {len(all_fasta)} sequences "
           f"(1 reference + {len(VALIDATED_MUTATIONS)} mutants)")
     print(f"   All sequences: {len(reference_seq)} aa (identical length except mutation point)")
     print(f"   Saved: {output_path}")
-    print("=" * 68)
 
 
 if __name__ == "__main__":

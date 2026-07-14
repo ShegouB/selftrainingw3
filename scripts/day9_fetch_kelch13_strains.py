@@ -44,7 +44,7 @@ def fetch_ortholog(species, accession):
         handle.close()
         return fasta
     except Exception as e:
-        print(f"    ❌ Failed to fetch {accession}: {e}")
+        print(f"Failed to fetch {accession}: {e}")
         return None
 
 
@@ -54,7 +54,7 @@ def build_mutant_sequence(reference_seq, mutation):
     if pos >= len(reference_seq):
         return None
     if reference_seq[pos] != mutation["wt"]:
-        print(f"    ⚠ Position {mutation['pos']} is "
+        print(f"Position {mutation['pos']} is "
               f"{reference_seq[pos]} not {mutation['wt']} — check numbering")
     mutant = reference_seq[:pos] + mutation["mut"] + reference_seq[pos+1:]
     return mutant
@@ -62,9 +62,7 @@ def build_mutant_sequence(reference_seq, mutation):
 
 def main():
     os.makedirs("data", exist_ok=True)
-    print("\n🧬 Day 9 — kelch13 Diversity Dataset (Orthologs + Resistance Mutants)")
-    print("=" * 70)
-
+    print("\n Day 9 — kelch13 Diversity Dataset (Orthologs + Resistance Mutants)")
     all_fasta = []
 
     # ── PART A: Fetch orthologs ──────────────────────────────────────
@@ -80,18 +78,17 @@ def main():
             lines  = fasta.strip().split("\n")
             header = f">{orth['species'].replace(' ', '_')}_{orth['accession']}"
             seq    = "".join(lines[1:])
-            print(f"    ✅ {len(seq)} aa")
+            print(f"{len(seq)} aa")
             all_fasta.append(f"{header}\n{seq}")
 
             if orth["species"] == "P. falciparum":
                 reference_seq = seq
         else:
-            print(f"    ❌ Not retrieved")
+            print(f"Not retrieved")
         time.sleep(0.4)
 
     # ── PART B: Build WHO-validated resistance mutants ──────────────
     print(f"\n\n[2/2] Building 9 WHO-validated resistance mutants")
-    print("-" * 70)
 
     if reference_seq:
         for mut in VALIDATED_MUTATIONS:
@@ -102,7 +99,7 @@ def main():
                 print(f"  {mut['name']:<8} pos {mut['pos']:>4}  "
                       f"{mut['wt']}→{mut['mut']}   {mut['region']}")
     else:
-        print("  ❌ No P. falciparum reference sequence available for mutagenesis")
+        print("No P. falciparum reference sequence available for mutagenesis")
 
     # ── Save combined FASTA ───────────────────────────────────────────
     output_path = "data/kelch13_diverse.fasta"
@@ -110,10 +107,9 @@ def main():
         f.write("\n".join(all_fasta) + "\n")
 
     n_seqs = len(all_fasta)
-    print(f"\n\n✅ Dataset built: {n_seqs} sequences")
+    print(f"\n\n Dataset built: {n_seqs} sequences")
     print(f"   ({len(ORTHOLOGS)} orthologs + {len(VALIDATED_MUTATIONS)} resistance mutants)")
     print(f"   Saved: {output_path}")
-    print("=" * 70)
 
 
 if __name__ == "__main__":
