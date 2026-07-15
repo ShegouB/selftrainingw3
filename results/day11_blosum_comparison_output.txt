@@ -1,0 +1,18 @@
+
+Day 11 - BLOSUM Matrix Comparison
+
+Substitution                                    BLOSUM45   BLOSUM62   BLOSUM80
+Leu -> Ile (conservative, both hydrophobic)          2.0        2.0        2.0
+Lys -> Arg (conservative, both basic)                3.0        2.0        3.0
+Gly -> Trp (non-conservative, size mismatch)        -2.0       -2.0       -6.0
+Asp -> Glu (conservative, both acidic)               2.0        2.0        2.0
+Cys -> Tyr (kelch13 C580Y resistance mutation)       -3.0       -2.0       -5.0
+Ala -> Ala (identity)                                5.0        4.0        7.0
+
+Interpretation:
+  Higher score = more likely substitution in evolution
+  Negative score = unlikely / destabilizing substitution
+  BLOSUM80 gives harsher penalties (for close homologs)
+  BLOSUM45 is more permissive (for distant homologs)
+
+Done

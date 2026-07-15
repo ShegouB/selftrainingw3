@@ -1,0 +1,27 @@
+
+Day 12 - Simplified BLAST Implementation (word matching + extension)
+
+Query (30 aa): CIGGYDGSSIIPKVEAYAHRMKAWVEVAPL
+Target (726 aa): kelch13 reference
+
+[1/3] Building word index and finding seed matches (word size = 3)...
+  Total seed matches found: 27
+
+[2/3] Extending seeds and filtering by minimum score...
+  High-scoring segment pairs (HSPs) after extension: 3
+
+[3/3] Top hits with E-value estimation:
+
+  Hit 1: score=151.0, length=30, E-value=2.76e-15
+    Query     1  CIGGYDGSSIIPKVEAYAHRMKAWVEVAPL
+    Target  542  CIGGYDGSSIIPNVEAYDHRMKAWVEVAPL
+
+  Hit 2: score=43.0, length=15, E-value=9.22e-03
+    Query     1  CIGGYDGSSIIPKVE
+    Target  447  CIGGFDGVEYLNSME
+
+  Hit 3: score=22.0, length=9, E-value=2.51e+00
+    Query     2  IGGYDGSSI
+    Target  590  IGGTNGERL
+
+Simplified BLAST implementation complete

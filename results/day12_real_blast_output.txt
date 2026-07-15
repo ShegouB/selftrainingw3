@@ -1,0 +1,45 @@
+
+Day 12 - Real BLASTP Search
+
+[1/3] Building local BLAST database from data/kelch13_diverse.fasta...
+  Database built: results/blast_db/kelch13_db
+
+[2/3] Query saved: data/query_mutated.fasta
+
+[3/3] Running blastp search (E-value threshold = 10)...
+  Results saved: results/day12_blastp_hits.tsv
+
+Hit table (qseqid, sseqid, pident, length, evalue, bitscore):
+  Subject               %ident  length       evalue  bitscore
+  Pf_kelch13_C580Y      93.333      30     1.02e-18      66.2
+  Pf_kelch13_C580Y      30.000      30        0.001      24.3
+  Pf_kelch13_C580Y      37.500      24         0.20      17.7
+  Pf_kelch13_R539T      93.333      30     1.02e-18      66.2
+  Pf_kelch13_R539T      30.000      30        0.001      24.3
+  Pf_kelch13_R539T      37.500      24         0.20      17.7
+  Pf_kelch13_Y493H      93.333      30     1.02e-18      66.2
+  Pf_kelch13_Y493H      30.000      30        0.001      24.3
+  Pf_kelch13_Y493H      37.500      24         0.20      17.7
+  Pf_kelch13_M476I      93.333      30     1.02e-18      66.2
+  Pf_kelch13_M476I      30.000      30        0.001      23.9
+  Pf_kelch13_M476I      37.500      24         0.20      17.7
+  Pf_kelch13_N458Y      93.333      30     1.02e-18      66.2
+  Pf_kelch13_N458Y      30.000      30        0.001      23.9
+  Pf_kelch13_N458Y      37.500      24         0.20      17.7
+  Pf_kelch13_F446I      93.333      30     1.02e-18      66.2
+  Pf_kelch13_F446I      30.000      30        0.001      24.3
+  Pf_kelch13_F446I      37.500      24         0.20      17.7
+  Pf_kelch13_REFERENCE_3D7  93.333      30     1.02e-18      66.2
+  Pf_kelch13_REFERENCE_3D7  30.000      30        0.001      24.3
+  Pf_kelch13_REFERENCE_3D7  37.500      24         0.20      17.7
+  Pf_kelch13_I543T      90.000      30     5.11e-18      64.3
+  Pf_kelch13_I543T      30.000      30        0.001      24.3
+  Pf_kelch13_I543T      37.500      24         0.20      17.7
+  Pf_kelch13_R561H      90.000      30     7.19e-18      63.9
+  Pf_kelch13_R561H      30.000      30        0.001      24.3
+  Pf_kelch13_R561H      37.500      24         0.20      17.7
+  Pf_kelch13_P553L      90.000      30     3.33e-17      62.0
+  Pf_kelch13_P553L      30.000      30        0.001      24.3
+  Pf_kelch13_P553L      37.500      24         0.20      17.7
+
+Real BLASTP search complete

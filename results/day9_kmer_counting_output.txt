@@ -1,0 +1,22 @@
+
+ Day 9 catch-up — k-mer Counting
+Using real kelch13 reference sequence (726 aa)
+
+Sequence length: 726
+Total possible 4-mers: 723
+Unique 4-mers found: 718
+
+Top 10 most frequent 4-mers:
+  k-mer     Count
+  NNNN          3
+  NLIN          2
+  KELE          2
+  CIGG          2
+  MEGE          1
+  EGEK          1
+  GEKV          1
+  EKVK          1
+  KVKT          1
+  VKTK          1
+
+ k-mer counting complete

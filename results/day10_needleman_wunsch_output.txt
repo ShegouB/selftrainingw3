@@ -1,0 +1,29 @@
+
+ Day 10 — Needleman-Wunsch Global Alignment (from scratch)
+
+Seq1 (30 aa): YVSSNLNIPRRNNCGVTSNGRIYCIGGYDG
+Seq2 (30 aa): YVSSNLNIPRRNNYGVTSNGRIYCIGGYDG
+
+[1/2] Running Needleman-Wunsch (match=+1, mismatch=-1, gap=-2)...
+
+Alignment (score = 28):
+  Seq1: YVSSNLNIPRRNNCGVTSNGRIYCIGGYDG
+        |||||||||||||.||||||||||||||||
+  Seq2: YVSSNLNIPRRNNYGVTSNGRIYCIGGYDG
+
+Alignment statistics:
+  Matches    : 29
+  Mismatches : 1
+  Gaps       : 0
+  Identity   : 96.7%
+[2/2] Testing with insertion (different lengths)...
+
+Seq3 (30 aa): YVSSNLNIPRRNNCGVTSNGRIYCIGGYDG
+Seq4 (31 aa): YVSSNLNIPRRNNCGVTSNGRIYCIGGYYDG
+
+Alignment (score = 28):
+  Seq1: YVSSNLNIPRRNNCGVTSNGRIYCIGG-YDG
+        ||||||||||||||||||||||||||| |||
+  Seq2: YVSSNLNIPRRNNCGVTSNGRIYCIGGYYDG
+
+ Needleman-Wunsch implementation validated!

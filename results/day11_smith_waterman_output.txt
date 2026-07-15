@@ -1,0 +1,41 @@
+
+Day 11 - Smith-Waterman Local Alignment with BLOSUM62
+=================================================================
+
+Query peptide (30 aa):
+  CIGGYDGSSIIPNVEAYDHRMKAWVEVAPL
+
+Target protein (726 aa): kelch13 reference (full length)
+
+[1/2] Running Smith-Waterman local alignment...
+
+Best local alignment found (score = 165.0):
+  Query      1  CIGGYDGSSIIPNVEAYDHRMKAWVEVAPL
+               ||||||||||||||||||||||||||||||
+  Target   542  CIGGYDGSSIIPNVEAYDHRMKAWVEVAPL
+
+Alignment statistics:
+  Alignment length : 30
+  Matches          : 30
+  Identity         : 100.0%
+  Query region     : positions 1-30
+  Target region    : positions 542-571
+
+=================================================================
+[2/2] Testing with a mutated query (3 substitutions)...
+
+Mutated query (30 aa):
+  CIGGYDGSSIIPKVEAYAHRMKAWVEVAPL
+
+Best local alignment found (score = 151.0):
+  Query      1  CIGGYDGSSIIPKVEAYAHRMKAWVEVAPL
+               ||||||||||||+||||+||||||||||||
+  Target   542  CIGGYDGSSIIPNVEAYDHRMKAWVEVAPL
+
+Alignment statistics:
+  Matches          : 28
+  Identity         : 93.3%
+  Target region    : positions 542-571
+
+Smith-Waterman implementation validated
+=================================================================
