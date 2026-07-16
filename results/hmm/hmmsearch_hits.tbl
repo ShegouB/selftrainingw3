@@ -1,0 +1,23 @@
+#                                                                   --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name            accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#    ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+Pf_kelch13_REFERENCE_3D7 -          kelch13_muscle       -                  0 1735.4  46.4         0 1735.2  46.4   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_N458Y         -          kelch13_muscle       -                  0 1734.4  45.9         0 1734.2  45.9   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_R561H         -          kelch13_muscle       -                  0 1734.2  46.4         0 1734.0  46.4   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_F446I         -          kelch13_muscle       -                  0 1733.9  46.4         0 1733.7  46.4   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_M476I         -          kelch13_muscle       -                  0 1733.8  46.4         0 1733.6  46.4   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_Y493H         -          kelch13_muscle       -                  0 1733.6  46.2         0 1733.4  46.2   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_R539T         -          kelch13_muscle       -                  0 1733.6  46.4         0 1733.4  46.4   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_I543T         -          kelch13_muscle       -                  0 1733.5  46.3         0 1733.3  46.3   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_P553L         -          kelch13_muscle       -                  0 1732.5  47.1         0 1732.3  47.1   1.0   1   0   0   1   1   1   1 -
+Pf_kelch13_C580Y         -          kelch13_muscle       -                  0 1732.5  46.7         0 1732.3  46.7   1.0   1   0   0   1   1   1   1 -
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      results/hmm/kelch13.hmm
+# Target file:     data/kelch13_diverse.fasta
+# Option settings: hmmsearch --tblout results/hmm/hmmsearch_hits.tbl results/hmm/kelch13.hmm data/kelch13_diverse.fasta 
+# Current dir:     /home/boris/bioinformatics/week3
+# Date:            Thu Jul 16 23:50:12 2026
+# [ok]
