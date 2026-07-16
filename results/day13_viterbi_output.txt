@@ -1,0 +1,28 @@
+
+Day 13 - Hidden Markov Models and the Viterbi Algorithm
+=================================================================
+
+Demo: CpG Island Detection via Viterbi (2-state HMM)
+------------------------------------------------------------
+
+Sequence:  GCGCGATATATGCGCATATATATGCGCGC
+Best path: CCCCCnnnnnnnnnnnnnnnnnnCCCCCC
+           (C = predicted CpG/GC-rich island, n = normal)
+
+Log probability of best path: -41.5192
+
+Predicted CpG/GC-rich islands:
+  Position 0-5: GCGCG
+  Position 23-29: GCGCGC
+
+=================================================================
+Connection to Week 1 Project 1:
+  Your GC-content scanner used a SLIDING WINDOW approach
+  to find AT-rich regions in P. falciparum.
+  An HMM-based approach (like this Viterbi demo) would
+  instead PROBABILISTICALLY SEGMENT the genome into GC-rich
+  and AT-rich states, which is exactly how tools like
+  GeneMark and Augustus detect gene boundaries in genomes.
+
+Done
+=================================================================

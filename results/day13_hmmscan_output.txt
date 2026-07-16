@@ -1,0 +1,26 @@
+
+Day 13 - HMM Search Against kelch13 Profile
+============================================================
+
+[1/2] Searching profile HMM against target database...
+  Profile: results/hmm/kelch13.hmm
+  Targets: data/kelch13_diverse.fasta
+  Results saved: results/hmm/hmmsearch_hits.tbl
+
+[2/2] Parsing hit table...
+------------------------------------------------------------
+  Target name                         E-value    Score
+  ----------------------------------------------------
+  Pf_kelch13_REFERENCE_3D7                  0   1735.4
+  Pf_kelch13_N458Y                          0   1734.4
+  Pf_kelch13_R561H                          0   1734.2
+  Pf_kelch13_F446I                          0   1733.9
+  Pf_kelch13_M476I                          0   1733.8
+  Pf_kelch13_Y493H                          0   1733.6
+  Pf_kelch13_R539T                          0   1733.6
+  Pf_kelch13_I543T                          0   1733.5
+  Pf_kelch13_P553L                          0   1732.5
+  Pf_kelch13_C580Y                          0   1732.5
+
+HMM search complete
+============================================================
